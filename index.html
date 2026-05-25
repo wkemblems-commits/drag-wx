@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRAG WX</title>
+  
+  <!-- PWA Metadata -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg, #0f172a, #1e2937); color: white; }
+    .card { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); }
+  </style>
+</head>
+<body class="min-h-screen p-4">
+  <div class="max-w-lg mx-auto">
+    <h1 class="text-4xl font-bold text-center mb-1">DRAG WX</h1>
+    <p class="text-center text-cyan-400 mb-8">Density Altitude • Track Conditions</p>
+
+    <div class="mb-6">
+      <input id="location" type="text" placeholder="Track or City (e.g. Gainesville, FL)" 
+             class="w-full p-4 rounded-2xl bg-slate-800 text-white text-lg border border-cyan-500">
+      <button onclick="getWeather()" 
+              class="mt-4 w-full bg-red-600 hover:bg-red-700 py-5 rounded-2xl font-bold text-xl transition">
+        GET TRACK CONDITIONS
+      </button>
+    </div>
+
+    <div id="results" class="hidden space-y-4"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
